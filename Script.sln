@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1684
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Script.Core", "Script.Core\Script.Core.csproj", "{74CE4F9E-C6F4-4C02-85FC-2D56860D91D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Script.GUI", "Script.GUI\Script.GUI.csproj", "{F5A8ADEB-574C-42A0-B2AD-3ED2934DF7AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Script.Test", "Script.Test\Script.Test.csproj", "{B34820B4-B435-441C-B59B-14968E71F0A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74CE4F9E-C6F4-4C02-85FC-2D56860D91D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74CE4F9E-C6F4-4C02-85FC-2D56860D91D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74CE4F9E-C6F4-4C02-85FC-2D56860D91D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74CE4F9E-C6F4-4C02-85FC-2D56860D91D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A8ADEB-574C-42A0-B2AD-3ED2934DF7AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A8ADEB-574C-42A0-B2AD-3ED2934DF7AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A8ADEB-574C-42A0-B2AD-3ED2934DF7AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A8ADEB-574C-42A0-B2AD-3ED2934DF7AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B34820B4-B435-441C-B59B-14968E71F0A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B34820B4-B435-441C-B59B-14968E71F0A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B34820B4-B435-441C-B59B-14968E71F0A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B34820B4-B435-441C-B59B-14968E71F0A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88C8BC44-4E19-43BE-90E5-49CE44EECB9B}
+	EndGlobalSection
+EndGlobal
