@@ -57,9 +57,9 @@
         public void Complex()
         {
             StringBuilder script = new StringBuilder();
+            script.AppendLine("set('a', 'a');");
             script.AppendLine("if ('true')");
             script.AppendLine("{");
-            script.AppendLine("    set('a', 'a');");
             script.AppendLine("    {");
             script.AppendLine("        get('a');");
             script.AppendLine("    }");
