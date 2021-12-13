@@ -40,8 +40,14 @@
                         throw new ParserException("Unclosed conditional expression");
                     case AcceptState.ConditionalPredicate:
                         throw new ParserException("Unclosed conditional predicate");
+                    case AcceptState.LoopExpression:
+                        throw new ParserException("Unclosed loop expression");
+                    case AcceptState.LoopPredicate:
+                        throw new ParserException("Unclosed loop predicate");
                     case AcceptState.Expression:
                         throw new ParserException("Unclosed expression block");
+                    default:
+                        throw new ParserException(context);
                 }
             }
 
