@@ -5,10 +5,10 @@
     using Script.Core.Models;
 
     /// <summary>
-    /// Implementation of a add method
+    /// Implementation of a modulus method
     /// </summary>
-    [Method("add", 2)]
-    public class Add : Method
+    [Method("mod", 2)]
+    public class Modulus : Method
     {
         /// <inheritdoc/>
         public override string Execute(ExecutionContext context, params string[] parameters)
@@ -16,7 +16,7 @@
             var a = Cast.ToDouble(parameters[0]);
             var b = Cast.ToDouble(parameters[1]);
 
-            return Cast.ToString(a + b);
+            return Cast.ToString(a % b);
         }
     }
 }

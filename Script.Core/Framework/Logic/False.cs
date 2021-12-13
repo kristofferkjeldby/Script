@@ -1,22 +1,19 @@
-﻿namespace Script.Core.Framework.Math
+﻿namespace Script.Core.Framework.Logic
 {
     using Script.Core.Interpreter;
     using Script.Core.Interpreter.Models;
     using Script.Core.Models;
 
     /// <summary>
-    /// Implementation of a add method
+    /// Implementation of false method
     /// </summary>
-    [Method("add", 2)]
-    public class Add : Method
+    [Method("false", 0)]
+    public class False : Method
     {
         /// <inheritdoc/>
         public override string Execute(ExecutionContext context, params string[] parameters)
         {
-            var a = Cast.ToDouble(parameters[0]);
-            var b = Cast.ToDouble(parameters[1]);
-
-            return Cast.ToString(a + b);
+            return Cast.ToString(false);
         }
     }
 }

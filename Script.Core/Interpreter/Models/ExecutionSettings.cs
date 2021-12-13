@@ -8,14 +8,14 @@ namespace Script.Core.Settings
     /// </summary>
     public class ExecutionSettings
     {
-        public ExecutionSettings(Dictionary<string, string> enviroment = null)
+        public ExecutionSettings(Dictionary<string, string> parameters = null)
         {
-            EnviromentHeap = enviroment ?? new Dictionary<string, string>();
+            Parameters = parameters ?? new Dictionary<string, string>();
         }
 
         /// <summary>
-        /// The enviroment variable to prefill into the heap
+        /// The parameters
         /// </summary>
-        public Dictionary<string, string> EnviromentHeap { get; set; }
+        public Dictionary<string, string> Parameters { get; set; }
     }
 }

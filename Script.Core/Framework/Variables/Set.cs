@@ -15,11 +15,15 @@
             var key = parameters[0];
             var value = parameters[1];
 
-            if (context.Heap.ContainsKey(key))
-                context.Heap[key] = value;
-            else
-                context.Heap.Add(key, value);
-
+            foreach (var scope in context.Scope.ToArray())
+            {
+                if (scope.Item2.ContainsKey(key))
+                {
+                    scope.Item2[key] = value;
+                    return value;
+                }                    
+            }
+            context.Scope.Peek().Item2[key] = value;
             return value;
         }
     }

@@ -1,5 +1,6 @@
 ﻿namespace Script.Core.Models
 {
+    using System;
     using System.Collections.Generic;
     using Script.Core.Interpreter.Models;
 
@@ -36,7 +37,7 @@
         /// <inheritdoc/>
         public override string Execute(ExecutionContext context)
         {
-            context.Scope.Push(this);
+            context.Scope.Push(new Tuple<ScopeExpression, Dictionary<string, string>>(this, new Dictionary<string, string>()));
 
             for (int i = 0; i < Expressions.Count; i ++)
             {

@@ -1,13 +1,14 @@
 ﻿namespace Script.Core.Framework.Compare
 {
+    using Script.Core.Interpreter;
     using Script.Core.Interpreter.Models;
     using Script.Core.Models;
 
     /// <summary>
-    /// Implementation of a get method
+    /// Implementation of a is set method
     /// </summary>
-    [Method("get", 1)]
-    public class Get : Method
+    [Method("isset", 1)]
+    public class IsSet : Method
     {
         /// <inheritdoc/>
         public override string Execute(ExecutionContext context, params string[] parameters)
@@ -17,11 +18,10 @@
             foreach(var scope in context.Scope.ToArray())
             {
                 if (scope.Item2.ContainsKey(key))
-                    return scope.Item2[key];
+                    return Cast.ToString(true);
             }
 
-            throw new InterpreterException($"Undeclared variable: {key}");
-
+            return Cast.ToString(false);
         }
     }
 }

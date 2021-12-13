@@ -22,7 +22,6 @@ namespace Script.GUI
                 stopWatch.Start();
                 var script = ScriptTextBox.Text;
                 var executionContext = Interpreter.Execute(script);
-                ConsoleTextBox.AppendText(executionContext.Console.ToString());
                 stopWatch.Stop();
                 ConsoleTextBox.AppendText(executionContext.Console.ToString());
                 ConsoleTextBox.AppendText($"Script ran: {stopWatch.Elapsed.TotalSeconds.ToString("0.00", CultureInfo.InvariantCulture)} seconds{Environment.NewLine}");

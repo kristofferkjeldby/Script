@@ -2,6 +2,7 @@
 {
 
     using Script.Core.Interpreter.Models;
+    using System.Globalization;
 
     /// <summary>
     /// Implementation of cast operations for scripting language
@@ -16,6 +17,17 @@
         {
             if (!int.TryParse(value, out var castedValue))
                 throw new InterpreterException($"Cannot cast {value} to integer");
+
+            return castedValue;
+        }
+
+        /// <summary>
+        /// Converts to double.
+        /// </summary>
+        public static double ToDouble(string value)
+        {
+            if (!double.TryParse(value, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out var castedValue))
+                throw new InterpreterException($"Cannot cast {value} to double");
 
             return castedValue;
         }
@@ -53,6 +65,15 @@
         public static string ToString(int value)
         {
             return value.ToString();
+        }
+
+        /// <summary>
+        /// Converts the double to a string representation.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        public static string ToString(double value)
+        {
+            return value.ToString("0.00", CultureInfo.InvariantCulture).TrimEnd('0').Trim('.');
         }
     }
 }

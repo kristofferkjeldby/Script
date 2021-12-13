@@ -20,8 +20,9 @@
         public ExecutionContext(ParseResult parseResult, ExecutionSettings executionSettings)
         {
             Console = new StringBuilder();
-            Heap = executionSettings?.EnviromentHeap ?? new Dictionary<string, string>();
-            Scope = new Stack<ScopeExpression>();
+            Parameters = executionSettings?.Parameters ?? new Dictionary<string, string>();
+            Heap = new Dictionary<string, string>();
+            Scope = new Stack<Tuple<ScopeExpression, Dictionary<string, string>>>();
             Labels = parseResult.Labels;
             LabelFlag = string.Empty;
         }
@@ -31,7 +32,10 @@
         /// </summary>
         public StringBuilder Console { get; private set; }
 
-        public Stack<ScopeExpression> Scope { get; set; }
+        /// <summary>
+        /// Gets or sets the scope.
+        /// </summary>
+        public Stack<Tuple<ScopeExpression, Dictionary<string, string>>> Scope { get; set; }
 
         /// <summary>
         /// Gets the result.
@@ -41,7 +45,7 @@
         /// <summary>
         /// Gets or sets the labels.
         /// </summary>
-        public List<String> Labels { get; set; }
+        public List<string> Labels { get; set; }
 
         /// <summary>
         /// Gets or sets the label flag.
@@ -57,6 +61,11 @@
         /// Gets the heap.
         /// </summary>
         public Dictionary<string, string> Heap { get; private set; }
+
+        /// <summary>
+        /// Gets the parameters.
+        /// </summary>
+        public Dictionary<string, string> Parameters { get; private set; }
 
         /// <summary>
         /// Binds the method.

@@ -5,18 +5,21 @@
     using Script.Core.Models;
 
     /// <summary>
-    /// Implementation of a equal method
+    /// Implementation of a is set method (parameter)
     /// </summary>
-    [Method("eq", 2)]
-    public class StringEqual : Method
+    [Method("issetp", 1)]
+    public class IsSetParameter : Method
     {
         /// <inheritdoc/>
         public override string Execute(ExecutionContext context, params string[] parameters)
         {
-            var a = Cast.ToDouble(parameters[0]);
-            var b = Cast.ToDouble(parameters[1]);
+            var key = parameters[0];
 
-            return Cast.ToString(a == b);
+            if (context.Parameters.ContainsKey(key))
+                return Cast.ToString(true);
+
+            return Cast.ToString(false);
+
         }
     }
 }
