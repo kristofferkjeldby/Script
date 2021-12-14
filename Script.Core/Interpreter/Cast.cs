@@ -26,7 +26,7 @@
         /// </summary>
         public static double ToDouble(string value)
         {
-            if (!double.TryParse(value, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out var castedValue))
+            if (!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out var castedValue))
                 throw new InterpreterException($"Cannot cast {value} to double");
 
             return castedValue;
